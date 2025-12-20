@@ -31,3 +31,4 @@ ders saatlerinin çakışmasını otomatik olarak engeller.
 - Ders saatleri çakışma kontrolü
 - Dersten silme işlemi
 - Birim testler ile doğrulama
+  Test push
