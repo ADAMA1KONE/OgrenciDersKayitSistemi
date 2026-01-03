@@ -6,6 +6,10 @@ import java.util.List;
 /**
  * Öğrencilerin ders kayıt ve ders bırakma işlemlerini yöneten servis sınıfıdır.
  */
+/**
+ * RegistrationService sınıfı,
+ * ders kayıt işlemlerinin iş kurallarını yönetir.
+ */
 
 
 public class RegistrationService {
