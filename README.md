@@ -54,3 +54,8 @@ Test çalıştırmak için:
 
 ## Final Notes
 This project was completed following OOP principles and academic requirements.
+
+## Git History
+This project was developed incrementally using Git.
+Each feature and documentation update was committed separately
+to reflect a realistic software development process.
