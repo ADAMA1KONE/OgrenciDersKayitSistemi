@@ -51,3 +51,6 @@ Test çalıştırmak için:
 - UML Class Diagram is used to show class structure and relationships.
 - UML Use Case Diagram represents user interactions with the system.
 - JUnit tests are implemented for Student and RegistrationService classes.
+
+## Final Notes
+This project was completed following OOP principles and academic requirements.
