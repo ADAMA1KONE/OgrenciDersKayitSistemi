@@ -3,6 +3,7 @@ package ogrenci.kayit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+// Student entity representing a system user
 
 public class Student {
 
