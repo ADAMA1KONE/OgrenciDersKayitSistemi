@@ -2,18 +2,26 @@ package ogrenci.kayit;
 
 import java.util.Objects;
 
+/**
+ * Ders bilgilerini tutan sınıf (kod, başlık ve program).
+ */
+
 public class Course implements Schedulable {
     private final String code;
     private final String title;
-    private final String schedule;
+    private final String schedule; // ex: "Mon 10:00-12:00"
+    private Instructor instructor; // ✅ Eğitmen
 
     public Course(String code, String title, String schedule) {
-        if (code == null || code.isBlank()) throw new IllegalArgumentException("code required");
-        if (title == null || title.isBlank()) throw new IllegalArgumentException("title required");
-        if (schedule == null || schedule.isBlank()) throw new IllegalArgumentException("schedule required");
-        this.code = code.trim();
-        this.title = title.trim();
-        this.schedule = schedule.trim();
+        this(code, title, schedule, null);
+    }
+
+    // ✅ nouveau constructeur avec instructor
+    public Course(String code, String title, String schedule, Instructor instructor) {
+        this.code = code;
+        this.title = title;
+        this.schedule = schedule;
+        this.instructor = instructor;
     }
 
     public String getCode() { return code; }
@@ -22,16 +30,24 @@ public class Course implements Schedulable {
     @Override
     public String getSchedule() { return schedule; }
 
+    public Instructor getInstructor() { return instructor; }
+
+    // ✅ Eğitmen atama
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
     public String getInfo() {
-        return code + " - " + title + " (" + schedule + ")";
+        String ins = (instructor == null) ? "Eğitmen: Yok" : "Eğitmen: " + instructor.getName();
+        return code + " - " + title + " (" + schedule + ") | " + ins;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Course)) return false;
-        Course c = (Course) o;
-        return Objects.equals(code, c.code);
+        Course course = (Course) o;
+        return Objects.equals(code, course.code);
     }
 
     @Override
