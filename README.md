@@ -1,34 +1,47 @@
-# Öğrenci Ders Kayıt Sistemi
+# Öğrenci Ders Kayıt Sistemi (Java OOP)
 
 ## Proje Açıklaması
-Bu proje, bir öğrencinin ders kayıt işlemlerini yönetmek için geliştirilmiş
-bir Java uygulamasıdır. Sistem, aynı derse tekrar kayıt yapılmasını ve
-ders saatlerinin çakışmasını otomatik olarak engeller.
+Bu proje, öğrencilerin derslere kayıt olabildiği, derslerini listeleyebildiği ve kayıtlarını takip edebildiği basit bir sistemdir.
+Kayıt sırasında:
+- Aynı derse tekrar kayıt engellenir (Duplicate)
+- Ders saat çakışmaları engellenir (Schedule Conflict)
 
-## Kullanılan Teknolojiler
-- Java 17 (Eclipse Temurin)
-- IntelliJ IDEA
-- Maven
-- JUnit 5
+## Kullanılan OOP Kavramları
+- **Encapsulation (Kapsülleme):** sınıflarda private alanlar + getter/setter yapısı
+- **Inheritance (Kalıtım):** `GraduateStudent extends Student`
+- **Polymorphism (Çok biçimlilik):** `calculateTuition()` override edilmiştir
+- **Interface:** `Schedulable`
+- **Enum:** `RegisterResult`
+- **Service Layer:** `RegistrationService`
+- **Catalog:** `CourseCatalog`
+- **Registration Takibi:** `Registration` sınıfı ile kayıt geçmişi tutulur
 
-## Proje Yapısı
-- src/main/java : Uygulamanın ana kaynak kodları
-- src/test/java : JUnit test sınıfları
-- Main.java : Uygulamanın çalıştırıldığı ana sınıf
-- StudentTest.java : Öğrenci kayıt işlemleri için testler
+## Sınıflar
+- `Student`, `GraduateStudent`
+- `Course`, `Instructor`
+- `CourseCatalog`
+- `Registration`, `RegistrationService`
+- `RegisterResult`, `Schedulable`
 
-## Uygulamanın Çalıştırılması
-- `Main.java` dosyası çalıştırılarak uygulama başlatılır.
-- Konsol üzerinden ders kayıt işlemleri görüntülenir.
+## Çalıştırma
+1. `Main.java` dosyasını çalıştırın.
+2. Konsolda ders kayıt işlemleri ve ders listesi görüntülenir.
 
-## Testlerin Çalıştırılması
-- `StudentTest` sınıfı çalıştırılarak birim testler (JUnit) yürütülür.
-- Tüm testlerin başarılı olması beklenir (yeşil sonuç).
+## Testler (JUnit 5)
+- `StudentTest`
+- `RegistrationServiceTest`
 
-## Temel Özellikler
-- Derse kayıt olma
-- Aynı derse tekrar kayıt engeli
-- Ders saatleri çakışma kontrolü
-- Dersten silme işlemi
-- Birim testler ile doğrulama
-  Test push
+Test çalıştırmak için:
+- test dosyasına sağ tık → **Run**
+
+## Örnek Çıktı
+- Kayıt başarılı / Duplicate / Saat çakışması mesajları
+- Öğrencinin kayıtlı ders listesi
+- Tuition (Polymorphism) çıktısı
+
+## OOP Concepts
+
+- Encapsulation is applied using private fields and public getter methods.
+- Inheritance is demonstrated by GraduateStudent extending Student.
+- Polymorphism is implemented by overriding the calculateTuition() method.
+- Interface usage is shown with the Schedulable interface.
